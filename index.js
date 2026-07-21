@@ -19,11 +19,22 @@ process.on('exit', forzarGuardadoAntesDeMorir);
 process.on('SIGINT', () => { forzarGuardadoAntesDeMorir(); process.exit(); });
 process.on('SIGTERM', () => { forzarGuardadoAntesDeMorir(); process.exit(); });
 process.on('uncaughtException', (err) => {
-    console.error('\nCRASHEO DETECTADO:', err.message);
+    console.error('\n💥 CRASHEO DETECTADO (uncaughtException):');
+    
+    // Imprime la traza completa si existe, o el error tal cual
+    if (err && err.stack) {
+        console.error(err.stack);
+    } else {
+        console.error(err);
+    }
+
     forzarGuardadoAntesDeMorir();
     process.exit(1);
 });
-
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('\n💥 PROMESA RECHAZADA NO MANEJADA (unhandledRejection):');
+    console.error(reason);
+});
 // 3. REGISTRO DE EVENTOS Y TAREAS
 events.registerEvents(client);
 initCronJobs(client);
