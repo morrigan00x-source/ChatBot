@@ -1,0 +1,20 @@
+# Carpeta de dependencias (pesada y se reinstala con npm install)
+node_modules/
+# Archivos de entorno y claves secretas
+.env    
+# Base de datos local o archivos temporales de sesión de WhatsApp
+.wwebjs_auth/
+.wwebjs_cache/
+# Los personajes o datos locales
+src/data/personajes.json
+ROLPLAY/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+node-v24.16.0-x64.msi
+
+#historiales 
+
+#navegador
+chrome-headless-shell-win64/
