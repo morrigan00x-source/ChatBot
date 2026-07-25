@@ -171,6 +171,11 @@ function registerEvents(client) {
             await client.sendMessage(idChat, "Modo rolplay desactivado.");
             return;
         }
+
+        if(comando === '!cont') {
+            for(let i = 0; i<101; i= i+1){
+                await client.sendMessage(idChat, i)
+            }
         // =========================================================
         // CONTEXTO DE CHAT GRUPAL (chat.isGroup === true)
         // =========================================================
@@ -203,6 +208,10 @@ function registerEvents(client) {
 
                 if (comando === `!id`) {
                     await client.sendMessage(idChat, idChat)
+                }
+
+              
+
                 }
             }
 
