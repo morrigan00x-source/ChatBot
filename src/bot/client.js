@@ -13,6 +13,7 @@ const client = new Client({
     },
     
     puppeteer: {
+        executablePath: '/usr/bin/chromium',
         headless: true,
         protocolTimeout: 300000, // <-- ESTO DA 5 MINUTOS DE TIEMPO DE ESPERA
         args: [
