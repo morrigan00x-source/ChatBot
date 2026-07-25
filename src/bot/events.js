@@ -168,7 +168,8 @@ function registerEvents(client) {
         if (comando === '!roleplay_off') {
             infoChat.banderaRolplay = false;
             infoChat.rol = "";
-            await client.sendMessage(idChat, "Modo rolplay desactivado.");
+            
+            setTimeout(await client.sendMessage(idChat, "Modo rolplay desactivado."), 1000)
             return;
         }
 
