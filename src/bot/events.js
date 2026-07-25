@@ -173,7 +173,7 @@ function registerEvents(client) {
             return;
         }
 
-        if(comando === '!cont') {
+        if(comando === '!count') {
             for(let i = 0; i<101; i= i+1){
                 await client.sendMessage(idChat, i)
             }

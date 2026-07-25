@@ -5,13 +5,7 @@ const constants = require('../config/constants'); // Está perfecto que importes
 const client = new Client({
     // Le damos un nombre a la sesión para evitar corrupción de carpetas
     authStrategy: new LocalAuth({ clientId: 'bot-principal' }),
-    
-    // ESTO ES VITAL: Fuerza a usar una versión estable de WhatsApp Web para que no se rompa con las actualizaciones
-    webVersionCache: {
-        type: 'remote',
-        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html',
-    },
-    
+   
     puppeteer: {
         executablePath: '/usr/bin/chromium',
         headless: true,
