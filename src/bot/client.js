@@ -5,7 +5,11 @@ const constants = require('../config/constants'); // Está perfecto que importes
 const client = new Client({
     // Le damos un nombre a la sesión para evitar corrupción de carpetas
     authStrategy: new LocalAuth({ clientId: 'bot-principal' }),
-   
+   // Forzamos la descarga de la versión web estable desde el repositorio oficial
+    webVersionCache: {
+        type: 'remote',
+        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.3000.1018940183-alpha.html',
+    },
     puppeteer: {
         executablePath: '/usr/bin/chromium',
         headless: true,
